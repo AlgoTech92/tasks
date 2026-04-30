@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "title": "🚀 Deploy AiSyncapp to Coolify",
+    "status": "in_progress",
+    "priority": "high",
+    "category": "deployment",
+    "description": "Deploy AiSyncapp (Open-WebUI fork) to Coolify VPS at kvmvps.aisyncapp.com",
+    "details": "Branch: aisyncapp | Build Pack: Dockerfile (NOT Nixpacks!) | Port: 8080 | Env vars: COMPUTER_USE_ORCHESTRATOR_URL, COMPUTER_USE_MCP_API_KEY",
+    "steps": [
+      "Log into Coolify at https://kvmvps.aisyncapp.com",
+      "Create/use project: aisyncapp",
+      "Add resource: Public Repo = AlgoTech92/open-webui, Branch = aisyncapp",
+      "Set Build Pack = Dockerfile",
+      "Configure env vars (Computer Use integration)",
+      "Set port 8080, configure domain",
+      "Deploy! (~5-10 min build time)"
+    ],
+    "assigned_to": "Drew (human)",
+    "created": "2026-04-30",
+    "updated": "2026-04-30"
+  },
+  {
+    "id": "2",
+    "title": "[ARCHIVED] Resolve Cloudflare WAF blockage (error 1010)",
+    "status": "archived",
+    "priority": "medium",
+    "category": "infrastructure",
+    "description": "Cloudflare/Traefik blocking n8n/MCP connection to computer.algotechbuilds.io/mcp",
+    "details": "Error: 1010 (Access Denied - WAF violation) | Endpoints: /mcp (Streamable HTTP), /sse (SSE) | MCP server spins up in Coolify but external access blocked",
+    "resources": {
+      "live_server": "https://computer.algotechbuilds.io",
+      "mcp_endpoint": "https://computer.algotechbuilds.io/mcp",
+      "repo": "https://github.com/AlgoTech92/open-computer-use"
+    },
+    "notes": "From Drew: 'computer.algotechbuilds.io... Cloudflare is blocking access due to WAF violations i think' | Need to adjust Cloudflare WAF rules or Traefik config on VPS",
+    "assigned_to": "Drew (human)",
+    "created": "2026-04-30",
+    "updated": "2026-04-30"
+  },
+  {
+    "id": "3",
+    "title": "Push open-webui-pipelines/ to aisyncapp branch",
+    "status": "pending",
+    "priority": "low",
+    "category": "git",
+    "description": "The open-webui-pipelines/ directory was moved into open-webui/ but is untracked in git. Need to add, commit, and push to aisyncapp branch.",
+    "details": "Location: /opt/data/projects/open-webui/open-webui-pipelines/ | Branch: aisyncapp | May also need to add to .gitignore if not meant to be tracked",
+    "assigned_to": "Drew (human)",
+    "created": "2026-04-30",
+    "updated": "2026-04-30"
+  }
+]
